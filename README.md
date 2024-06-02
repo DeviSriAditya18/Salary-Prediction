@@ -1,0 +1,1 @@
+The Salary Prediction project aims to predict the salaries of individuals based on various features such as experience, ratings, job title, and so on. By leveraging machine learning algorithms, we can estimate the expected salary and provide insights for career planning and salary negotiation.
