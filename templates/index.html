@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-image: url('salary.jpeg');
+                background-size: cover;
+                background-position: center;
+            }
+            .login {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                margin: 50px auto;
+                width: 80%;
+                max-width: 800px;
+                border-radius: 10px;
+            }
+            form {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            label, input {
+                width: 48%;
+                margin: 1%;
+                color: green;
+            }
+            label {
+                font-weight: bold;
+            }
+            input[type="number"] {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                width: calc(48% - 22px);
+            }
+            .btn {
+                background-color: #007bff;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+                margin-top: 20px;
+            }
+            .btn:hover {
+                background-color: #0056b3;
+            }
+            h3 {
+                width: 100%;
+                margin-top: 20px;
+                color: magenta;
+            }
+            h1 {
+                text-align: center;
+                color: orange;
+            }
+            .prediction-text {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #e0f7fa;
+                border: 1px solid #4dd0e1;
+                border-radius: 4px;
+                color: #00796b;
+                font-size: 16px;
+                text-align: center;
+            }
+            .message {
+                background-color: #dff0d8;
+                color: #3c763d;
+                border: 1px solid #d6e9c6;
+                border-radius: 4px;
+                padding: 15px;
+                margin-bottom: 20px;
+                text-align: center;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="message">{{ prediction_text }}</div>
+        <div class="login">
+            <h1>Salary Prediction</h1>
+            <form action="{{ url_for('predict') }}" method="post">
+                    
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age" placeholder="Enter your age"><br><br>
+
+                <label for="leaves used">Leaves Used:</label><br>
+                <input type="number" id="leaves used" name="leaves used" placeholder="Enter how many Leaves Used"><br><br>
+
+                <label for="leaves remaining">Leaves Remaining:</label><br>
+                <input type="number" id="leaves remaining" name="leaves remaining" placeholder="Enter how many Leaves Remaining"><br><br>
+
+                <label for="ratings">Ratings:</label><br>
+                <input type="number" id="ratings" name="ratings" placeholder="Enter Ratings"><br><br>
+
+                <label for="past exp">Past Exp:</label><br>
+                <input type="number" id="past exp" name="past exp" placeholder="Enter Past Exp"><br><br>
+
+                <label for="female">Female:</label><br>
+                <input type="number" id="female" name="female" placeholder="Enter 1 for Female else Enter 0"><br><br>
+
+                <label for="male">Male:</label><br>
+                <input type="number" id="male" name="male" placeholder="Enter 1 for Male else Enter 0"><br><br>
+
+                <h3>Select Designation</h3>
+
+                <label for="analyst">Analyst:</label><br>
+                <input type="number" id="analyst" name="analyst" placeholder="Enter 1 if u r Analyst else Enter 0"><br><br>
+                <label for="associate">Associate:</label><br>
+                <input type="number" id="associate" name="associate" placeholder="Enter 1 if u r Associate else Enter 0"><br><br>
+                <label for="director">Director:</label><br>
+                <input type="number" id="director" name="director" placeholder="Enter 1 if u r Director else Enter 0"><br><br>
+                <label for="manager">Manager:</label><br>
+                <input type="number" id="manager" name="manager" placeholder="Enter 1 if u r Manager else Enter 0"><br><br>
+                <label for="senior analyst">Senior Analyst:</label><br>
+                <input type="number" id="senior analyst" name="senior analyst" placeholder="Enter 1 if u r Senior Analyst else Enter 0"><br><br>
+                <label for="senior manager">Senior Manager:</label><br>
+                <input type="number" id="senior manager" name="senior manager" placeholder="Enter 1 if u r Senior Manager else Enter 0"><br><br>
+                    
+                <h3>Select Unit</h3>
+
+                <label for="finance">Finance:</label><br>
+                <input type="number" id="finance" name="finance" placeholder="Enter 1 if u r Finance else Enter 0"><br><br>
+                <label for="it">IT:</label><br>
+                <input type="number" id="it" name="it" placeholder="Enter 1 if u r IT else Enter 0"><br><br>
+                <label for="management">Management:</label><br>
+                <input type="number" id="management" name="management" placeholder="Enter 1 if u r Management else Enter 0"><br><br>
+                <label for="management">Marketing:</label><br>
+                <input type="number" id="management" name="management" placeholder="Enter 1 if u r Marketing else Enter 0"><br><br>
+                <label for="operations">Operations:</label><br>
+                <input type="number" id="operations" name="operations" placeholder="Enter 1 if u r Operations else Enter 0"><br><br>
+                <label for="web">Web:</label><br>
+                <input type="number" id="web" name="web" placeholder="Enter 1 if u r Web else Enter 0"><br><br>
+
+                    
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+        </div>
+    </body>
+</html>
